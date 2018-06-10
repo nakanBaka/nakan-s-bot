@@ -1,1 +1,1 @@
-worker: node doge bot.js
+worker: node bots.js
