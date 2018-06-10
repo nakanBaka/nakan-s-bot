@@ -1,1 +1,16 @@
 
+{
+"name":"doge"
+ "version":"1.0.0"
+  "main":"index.js"
+  "scripts": {
+    "test": "echo \no test specified\" && exit 1"
+  },
+"author":"nakan",
+"license":"ISC",
+"dependencies": {
+  "discord.js":"^11.3.2"
+  },
+"devDependencies":{},
+"description":"nada"
+}
