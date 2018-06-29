@@ -1,0 +1,25 @@
+{
+  "name": "neko",
+  "version": "2.0.0",
+  "description": "um bot muito legal",
+  "main": "index.js",
+  "scripts": {
+    "test": "teste.js"
+  },
+  "author": "nakan",
+  "license": "ISC",
+  "dependencies": {
+    "cleverbot.io": "^1.0.4",
+    "discord.js": "^11.3.2",
+    "ffmpeg": "0.0.4",
+    "minimist": "^1.2.0",
+    "ms": "^2.1.1",
+    "parse-ms": "^1.0.1",
+    "quick-db": "^1.0.5",
+    "search": "^1.0.0",
+    "simple-youtube-api": "^5.0.2",
+    "youtube": "^0.1.0",
+    "youtube-info": "^1.2.0",
+    "ytdl-core": "^0.20.4"
+  }
+}
