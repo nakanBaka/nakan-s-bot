@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 exports.run = (client,  bot) => {
   const config = require('./config.json');
 //  client.user.setGame(config.prefix + "help")
-  console.log(`Em funcionamento!!!! total de ${client.channels.size} Canais, em ${client.guilds.size} servers, um total de ${client.users.size} usuarios.`);
+  client.user.setActivity("minha prefixo neste server é B!")
+ console.log(`Em funcionamento!!!! total de ${client.channels.size} Canais, em ${client.guilds.size} servers, um total de ${client.users.size} usuarios.`);
     client.on('guildMemberAdd', member =>{
 	const embed = new Discord.RichEmbed()
   .setThumbnail(member.user.displayAvatarURL)
