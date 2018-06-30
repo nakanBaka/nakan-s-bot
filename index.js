@@ -68,9 +68,11 @@ client.on('messageDelete', async (message) => {
     logs.send(logembed);
 })
 
- client.on("messageDelete", message => {
+ client.on("message", message => {
   if(message.content == 'porra', 'lixo', 'caralho', 'puto', 'teste'){
-message.channel.send("SEM PALAVRÕES!!")
+message.delete();
+    message.channel.send("SEM PALAVRÕES!!")
+    
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
