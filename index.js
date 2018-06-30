@@ -68,7 +68,13 @@ client.on('messageDelete', async (message) => {
     logs.send(logembed);
 })
 
+ var filterWords = ["porra", "caralho", "lixo", "merda", "puta", "puto"];
+        var rgx = new RegExp(filterWords.join(""), "gi");
 
+        function wordFilter(str) {
+        	return str.replace(rgx, "****");
+        }
+message.channel.send("SEM PALAVRÕES!!)
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
