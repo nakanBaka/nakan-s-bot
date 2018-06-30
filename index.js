@@ -68,5 +68,10 @@ client.on('messageDelete', async (message) => {
     logs.send(logembed);
 })
 
+var prefix = 'B!';
+let fetched = await db.fetch(`prefix_${message.guild.id}`);
+if (fetched === null) prefix = 'B!';
+else prefix = fetched;
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
