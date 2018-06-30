@@ -70,7 +70,7 @@ client.on('messageDelete', async (message) => {
 
  client.on("messageDelete", message => {
   if(message.content == 'porra', 'lixo', 'caralho', 'puto', 'teste'){
-message.channel.send("SEM PALAVRÕES!!)
+message.channel.send("SEM PALAVRÕES!!")
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
