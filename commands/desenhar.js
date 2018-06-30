@@ -1,4 +1,4 @@
-//exports.run = (client, message, args, moment, prefix) => { 
+exports.run = (client, message, args, moment, prefix) => { 
   const {
     Canvas
 } = require("canvas-constructor");
@@ -13,7 +13,6 @@ let channels = [];
  * @param {String} command
  * @param {Array<String>} args
  */
-exports.run = (client,message,args)=> {
 
 
     if (channels.includes(message.channel.id)) {
