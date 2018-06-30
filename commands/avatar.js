@@ -8,8 +8,9 @@ let member = message.mentions.users.first() || message.author;
     const embed = new Discord.RichEmbed()
     
         .setColor(0xffffff) // This will set the embed sidebar color
-        .setTitle(member.username, rank) // This will set the embed title
+        .setTitle(member.username, "aqui está se avatar!") // This will set the embed title
        .setImage(member.displayAvatarURL)// This will set the embed image
+    .setFooter("Para de tomar café nakan!")
         
     // Send Message
     message.channel.send(embed)
