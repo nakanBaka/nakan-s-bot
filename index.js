@@ -67,5 +67,6 @@ client.on('messageDelete', async (message) => {
     //console.log(entry)
     logs.send(logembed);
 })
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
