@@ -16,9 +16,6 @@ exports.run = (client,  bot) => {
     let role = member.guild.roles.find("name", "membros");
     member.addRole(role).catch(console.error);
 });
-
-
-
  client.on('message', (message) =>{
 });
          }
