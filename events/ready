@@ -17,15 +17,8 @@ exports.run = (client,  bot) => {
     member.addRole(role).catch(console.error);
 });
 
-setInterval(() => {
 
-}, 1200000);
 
-var messages = ["sabe eu já tentei tomar café, pena que eu não existo...", "Qual é a graça de ficar tomando café, ein nakan!?", "...", "Como o cego paga a vista? Com dinheiro óbvio"];
-        client.guilds.get(guild_id).channels.get(channel_id).send(messages[Math.round(messages.length-1*Math.random())]);
-    }, tempo_de_intervalo);
-
-  })
  client.on('message', (message) =>{
 });
          }
