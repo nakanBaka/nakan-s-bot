@@ -32,13 +32,43 @@ client.on("message", message => {
 client.on("message", message => {
   if(message.content == '<@430150354911494166>'){
 var embedz = new Discord.RichEmbed()
-.setAuthor('O-oi eu sou o Neko', message.author.displayAvatarURL)
+.setAuthor('Eu amo panquecas!', message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
-.setDescription('Minha prefixo é B! para saber de mais digite B!help')
+.setDescription('OI! Está perdido/a? Digite B!help para saber mais!')
 .setTimestamp()
 .setFooter('NEKO')
 message.channel.send({embed : embedz})
 }})
+
+client.on('messageDelete', async (message) => {
+    const logs = message.guild.channels.find('name', 'logs');
+    if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
+        await message.guild.createChannel('logs', 'text');
+    }
+    if (!logs) {
+        return console.log('O canal de logs não esta criado')
+    }
+    const entry = await message.guild.fetchAuditLogs({
+        type: 'MESSAGE_DELETE'
+    }).then(audit => audit.entries.first())
+    let user;
+    if (entry.extra.channel.id === message.channel.id && (entry.target.id === message.author.id) && (entry.createdTimestamp > (Date.now() - 5000)) && (entry.extra.count >= 1)) {
+        user = entry.executor.username
+    } else {
+        user = message.author
+    }
+    const logembed = new Discord.RichEmbed()
+        //.setTitle('Message Deleted')
+        .setAuthor(user.tag, message.author.displayAvatarURL)
+        .addField(`**Mensagem de  ${message.author.username} deletada em ${message.channel.name}**\n\n`, message.content)
+        .setColor(message.guild.member(client.user).displayHexColor)
+        .setFooter(`<#${message.channel.id}>`)
+        .setTimestamp()
+    //console.log(entry)
+    logs.send(logembed);
+})
+
+     
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
