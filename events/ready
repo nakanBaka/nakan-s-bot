@@ -1,5 +1,7 @@
-exports.run = (client,  bot) => {
- console.log(`Em funcionamento!!!! total de ${client.channels.size} Canais, em ${client.guilds.size} servers, um total de ${client.users.size} usuarios.`);
+exports.run = (client) => {
+  const config = require('./config.json');
+  console.log("...");
+}
     client.on('guildMemberAdd', member =>{
 	const embed = new Discord.RichEmbed()
   .setThumbnail(member.user.displayAvatarURL)
