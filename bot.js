@@ -40,5 +40,22 @@ var embedz = new Discord.RichEmbed()
 message.channel.send({embed : embedz})
 }})
 
+    client.on('guildMemberAdd', member =>{
+	const embed = new Discord.RichEmbed()
+  .setThumbnail(member.user.displayAvatarURL)
+	.setAuthor( "Bem vindo! " + member.user.username)
+	.setColor('BD10E0')
+	.addField("nós pedimos para que você leia as regras ", "para não cometer nenhuma infração")
+	.addField("Onde posso divulgar meus trabalhos?", "#desenhos-do-pessoal" )
+.addField("Preciso de ajuda? ", "contate algum moderador presente!" );
+  member.guild.channels.get('462368547012870145').send({embed});
+  client.on("guildMemberAdd", function(member) {
+    let role = member.guild.roles.find("name", "membros");
+    member.addRole(role).catch(console.error);
+});
+ client.on('message', (message) =>{
+});
+         }
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
