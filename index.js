@@ -44,7 +44,7 @@ client.on('messageDelete', async (message) => {
     const logs = message.guild.channels.find('name', 'logs');
     if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
         await message.guild.createChannel('logs', 'text');
-    }
+    
     if (!logs) {
         return console.log('O canal de logs não esta criado')
     }
@@ -68,15 +68,15 @@ client.on('messageDelete', async (message) => {
     logs.send(logembed);
 })
 
-     setInterval(() => {
+     
 
-}, 1200000);
 
-var messages = ["sabe eu já tentei tomar café, pena que eu não existo...", "Qual é a graça de ficar tomando café, ein nakan!?", "...", "Como o cego paga a vista? Com dinheiro óbvio"];
-        client.guilds.get(guild_id).channels.get(channel_id).send(messages[Math.round(messages.length-1*Math.random())]);
-    }, tempo_de_intervalo);
 
-  })
+ 
+
+   
+
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
