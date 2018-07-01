@@ -56,6 +56,15 @@ message.channel.send({embed : embedz})
  client.on('message', (message) =>{
 });
          }
+	      message.content == 'café'){
+	      var nameResult = args.join(' ');
+if (!nameResult) nameResult = null;
+client.user.setActivity(nameResult, {type: "STREAMING"});
+let embed = new RichEmbed()
+.setAuthor(`${message.author.tag}`, `${message.author.avatarURL}`)
+.setDescription(`droga! Você descobriu, parabéns. Mudei minha presença para: ${nameResult}`)
+message.channel.send(embed)
+} else {
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
