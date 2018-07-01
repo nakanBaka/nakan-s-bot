@@ -56,7 +56,7 @@ message.channel.send({embed : embedz})
  client.on('message', (message) =>{
 });
          }
-	      message.content == 'café'){
+	   if(message.content == 'café'){
 	      var nameResult = args.join(' ');
 if (!nameResult) nameResult = null;
 client.user.setActivity(nameResult, {type: "STREAMING"});
