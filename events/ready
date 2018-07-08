@@ -4,9 +4,3 @@ exports.run = (client) => {
 }
 
 client.on('message', message => {
-    const swearWords = ["teste", "porra","caralho", "merda", "lixo", "gay", "puta", "puto"];
-    if( swearWords.some(word => message.content.includes(word)) ) {
-        message.delete();
-        message.author.send('Mano, sem palavrão!');
-      }
-})
