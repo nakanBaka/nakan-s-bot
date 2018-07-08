@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
   
   console.log(`\n${message.author.username}#${message.author.discriminator} Used .Eval Command On ${message.guild.name}`)
     let argresult = args.join(' ');
-    if (message.author.id !==  '341372896922435595') {
+    if (message.author.id !==  'Membros') {
            // Check if user have Permissions to use the command
           message.channel.send('Oh! Que pena... Você não tem permisão'); // Send Message to the channel if they dont have permissions
           return; // Returns the code so the rest doesn't run
