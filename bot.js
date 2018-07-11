@@ -40,7 +40,5 @@ var embedz = new Discord.RichEmbed()
 message.channel.send({embed : embedz})
 }})
 
-
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
