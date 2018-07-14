@@ -1,6 +1,7 @@
 exports.run = (client) => {
   const config = require('./config.json');
-  console.log("...");
+  console.log("Well... To on");
 }
 
 client.on('message', message => {
+});
