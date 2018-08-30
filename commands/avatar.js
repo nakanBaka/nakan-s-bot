@@ -10,14 +10,14 @@ exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF 
     message.channel.startTyping(); // TELLS YOUR HANDICAPPED BOT TO START TYPING! ;)
 
 
-    let msg = await message.channel.send('``Gerando seu avatar sexy... Isso pode demorar um ano``') //UNNECESSARY BUT COOL.
+    let msg = await message.channel.send('**Gerando seu avatar... Isso pode demorar um pouco**') //UNNECESSARY BUT COOL.
 
     let user = message.mentions.users.first() || message.author; //THIS IS IMPORTANT BECAUSE YOU WANT YOUR BOT TO SHOW OTHER PEOPLE'S AVATAR AS WELL BY MENTIONING THEM!
 
     // AVATAR EMBED
 
     let embed = new Discord.RichEmbed() //HERE WE DEFINE THE EMBED
-        .setAuthor(`${user.username} ta aqui teu avatar`) //HERE WE SHOW THE USER'S NAME!
+        .setAuthor(`${user.username} Aqui está o avatar.`) //HERE WE SHOW THE USER'S NAME!
         .setImage(user.displayAvatarURL) // USER'S AVATAR
         .setColor(msg.guild.me.highestRole.color) //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
         .setFooter(`${randomfooter}`) //FOOTER AND ICON
