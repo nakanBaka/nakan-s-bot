@@ -30,13 +30,13 @@ client.on("message", message => {
  
 });
 client.on("message", message => {
-  if(message.content == '<@430150354911494166>'){
+  if(message.content == '<@484534602644455456>'){
 var embedz = new Discord.RichEmbed()
-.setAuthor('Eu amo panquecas!', message.author.displayAvatarURL)
+.setAuthor(message.author.username, message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
-.setDescription('OI! Está perdido/a? Digite B!help para saber mais!')
+.setDescription(`**Olá! Perdido? Bem, digite ${config.prefix}help para saber sobre mim!**`)
 .setTimestamp()
-.setFooter('NEKO')
+.setFooter('Charlie')
 message.channel.send({embed : embedz})
 }})
 
