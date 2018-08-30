@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "teste.js"
+    "start": "index.js"
   },
   "author": "nakan",
   "license": "ISC",
