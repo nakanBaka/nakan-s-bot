@@ -55,8 +55,6 @@ message.channel.send({embed : embedz})
 
 
 
-// THIS  MUST  BE  THIS  WAY
-client.login(config.token);
 
 
 
