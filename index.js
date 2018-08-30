@@ -313,4 +313,4 @@ client.login(config.token);
         client.users.get("341372896922435595").send(embed)
       }
     });
-client.login("NDg0NTM0NjAyNjQ0NDU1NDU2.Dmjvlg.SBoXNF5FNCvbKl7Qod2po");
+client.login(process.env.BOT_TOKEN);
