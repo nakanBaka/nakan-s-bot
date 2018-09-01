@@ -47,7 +47,7 @@ client.on("message", message => {
 var embedz = new Discord.RichEmbed()
 .setAuthor(message.author.username,message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
-.setDescription('**Olá! Se quiser minha ajuda escreva B!help.**')
+.setDescription(`**Olá! Se quiser minha ajuda escreva ${config.prefix}help.**`)
 .setTimestamp()
 .setFooter(`Pedido por ${message.author.username}`)
 message.channel.send({embed : embedz})
