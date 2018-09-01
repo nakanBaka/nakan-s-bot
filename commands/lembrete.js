@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
       let reminder = args.slice(1).join(" ");
       let reminderTime = args[0];
-      if(!reminderTime) return message.channel.send("**Diga quando devo lhe avisar, exemplo: B!lembrete 15m tomar café**");
+      if(!reminderTime) return message.channel.send(`**Diga quando devo lhe avisar, exemplo: ${config.prefix}lembrete 15m tomar café**`);
       if(!reminder) return message.channel.send("**Diga porque devo lhe avisar!**");
       
 
