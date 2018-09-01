@@ -14,10 +14,9 @@ exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF 
 
     let user = message.mentions.users.first() || message.author; //THIS IS IMPORTANT BECAUSE YOU WANT YOUR BOT TO SHOW OTHER PEOPLE'S AVATAR AS WELL BY MENTIONING THEM!
 
-    // AVATAR EMBED
 
     let embed = new Discord.RichEmbed() //HERE WE DEFINE THE EMBED
-        .setTiltle(`${user.username}`)
+        .setTitle(`${user.username}`)
         .setDescription(`[Link de Download](${avatar})`)
         .setImage(user.displayAvatarURL) // USER'S AVATAR
         .setColor(msg.guild.me.highestRole.color) //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
