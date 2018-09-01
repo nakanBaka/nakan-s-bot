@@ -22,11 +22,10 @@ exports.run = (client, message, args) => {
                 var toplevel = "\n" + position.slice(0, 10).map((a, posicao) => "**" + (posicao + 1) + "** " +
                
                     client.users.get(a.id).username + " - **Level:** " + a.level + ", **Exp:** " + a.xp + "/" + (350 * a.level + 1)).join("\n") + "";
-                message.channel.sendMessage({
-                    const rank = new Discord.RichEmbed()
+                    const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor('Top 10 - level', toplevel)
       .setFooter("Sua pontuação atual: " + documano.level)
-             message.channel.send(rank);  
+             message.channel.send(embed);  
 
 }
