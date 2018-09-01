@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const moment = require("moment");
 moment.locale("pt-BR")
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
   let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
   let sicon = message.guild.iconURL;
   let serverembed = new Discord.RichEmbed()
