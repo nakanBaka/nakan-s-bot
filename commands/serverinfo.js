@@ -1,9 +1,8 @@
 const Discord = require("discord.js");
+const moment = require("moment");
+moment.locale("pt-BR")
 
 module.exports.run = async (bot, message, args) => {
-  let day = message.guild.createdAt.getDate()
-  let month = 1 + message.guild.createdAt.getMonth()
-  let year = message.guild.createdAt.getFullYear()
   let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
   let sicon = message.guild.iconURL;
   let serverembed = new Discord.RichEmbed()
@@ -13,7 +12,8 @@ module.exports.run = async (bot, message, args) => {
    .setFooter(`Pedido por ${message.author.username}`)
    .addField("ID", message.guild.id, true)
    .addField("Nome", message.guild.name, true)
-   .addField(`Servidor criado em`, `Dia ${day} de ${month} de ${year}`)
+   .addField(`Servidor criado em`, `${moment.utc(message.guild.createdAt).format("LL")}`)
+   .addField(`Entrei aqui:`, `${moment.utc(client.joinedAt).format("LL")}`)
    .addField("Dono", message.guild.owner.user.tag, true)
    .addField("Região", message.guild.region, true)
    .addField("Canais", message.guild.channels.size, true)
