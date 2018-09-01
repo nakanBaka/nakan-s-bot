@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF 
 
     let embed = new Discord.RichEmbed() //HERE WE DEFINE THE EMBED
         .setTitle(`${user.username}`)
-        .setDescription(`[Link de Download](${avatar})`)
+        .setDescription(`[Link de Download](${user.avatarURL})`)
         .setImage(user.displayAvatarURL) // USER'S AVATAR
         .setColor(msg.guild.me.highestRole.color) //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
         .setFooter(`${randomfooter}`) //FOOTER AND ICON
