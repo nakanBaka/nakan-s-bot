@@ -2,7 +2,7 @@ const Discord = require("discord.js"); //YOU WILL NEED TO DEFINE DISCORD SINCE W
 
 exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF YOU USED CLIENT THEN CHNAGE ALL THE "BOT" TO "CLIENT" cool!
 
-    var footertext = [`${bot.user.username}: oof `, `${bot.user.username}: 🔥`, `${bot.user.username}: O tempo ta bão né ${message.author.id}`, `${bot.user.username}: to pensando em matar todos os humanos...`, `${bot.user.username}: O nakan não para de tomar café...`];
+    var footertext = [`${bot.user.username}: oof `, `${bot.user.username}: 🔥`, `${bot.user.username}: O tempo ta bão né ${message.author.username}`, `${bot.user.username}: to pensando em matar todos os humanos...`, `${bot.user.username}: O nakan não para de tomar café...`];
     var rand = Math.floor(Math.random() * footertext.length);
     var randomfooter = footertext[rand]; //THIS AND THE TWO LINES ABOVE IS TOTALLY UNNECESSARY. But you want to make your bot more interactive so keep it.Just an array of some random shit, you can add more if you would like just read the code and change it at your will! 
 
@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF 
 
     let embed = new Discord.RichEmbed() //HERE WE DEFINE THE EMBED
         .setTitle(`${user.username}`)
-        .setDescription(`[Link de Download](${user.avatarURL})`)
+        .setDescription(`[**Link de Download**](${user.avatarURL})`)
         .setImage(user.displayAvatarURL) // USER'S AVATAR
         .setColor(msg.guild.me.highestRole.color) //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
         .setFooter(`${randomfooter}`) //FOOTER AND ICON
