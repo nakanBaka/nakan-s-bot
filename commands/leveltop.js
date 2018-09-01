@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
       .setColor("RANDOM")
       .setAuthor('Top 10 - level', toplevel)
       .setFooter(Sua pontuação atual: " + documano.level + ", Exp: " + documano.xp + "/" + (350 * documano.level + 1))
-               
+             message.channel.send(rank);  
                })
             }
         });
