@@ -4,8 +4,8 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
 
       let reminderTime = args[0];
-      if(!reminderTime) return message.channel.send("**Diga quando devo lhe avisar, exemplo: `B!lembrete 15min tomar café**");
-
+      if(!reminderTime) return message.channel.send("**Diga quando devo lhe avisar, exemplo: B!lembrete 15m tomar café**");
+      if(!reminderTime) return message.channel.send("**Diga porque devo lhe avisar!**");
       let reminder = args.slice(1).join(" ");
 
       let remindEmbed = new Discord.RichEmbed()
