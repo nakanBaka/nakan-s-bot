@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
                     let rank  = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor('Top 10 - level', toplevel)
-      .setFooter(Sua pontuação atual: " + documano.level)
+      .setFooter("Sua pontuação atual: " + documano.level)
              message.channel.send(rank);  
 
 }
