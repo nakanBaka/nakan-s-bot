@@ -28,8 +28,5 @@ exports.run = (client, message, args) => {
       .setAuthor('Top 10 - level', toplevel)
       .setFooter(Sua pontuação atual: " + documano.level)
              message.channel.send(rank);  
-               })
-            }
-        });
-    })
+
 }
