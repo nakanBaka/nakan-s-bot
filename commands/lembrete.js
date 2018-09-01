@@ -10,9 +10,9 @@ module.exports.run = async (bot, message, args) => {
 
       let remindEmbed = new Discord.RichEmbed()
       .setColor('#ffffff')
-      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
-      .addField("motivo", `\`\`\`${reminder}\`\`\``)
-      .addField("tempo", `\`\`\`${reminderTime}\`\`\``)
+      .setAuthor(`**${message.author.username}**`, message.author.displayAvatarURL)
+      .addField("**Motivo:**", `\`\`\`${reminder}\`\`\``)
+      .addField("**Tempo:**", `\`\`\`${reminderTime}\`\`\``)
       .setTimestamp();
 
       message.channel.send(remindEmbed);
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
         let remindEmbed = new Discord.RichEmbed()
         .setColor('#ffffff')
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
-        .addField("Lembrete", `\`\`\`${reminder}\`\`\``)
+        .addField("**Lembrete:**", `\`\`\`${reminder}\`\`\``)
         .setTimestamp()
 
         message.author.send(remindEmbed);
