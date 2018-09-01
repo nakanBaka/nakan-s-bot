@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => { //OH BTW BOT IS YOUR CLIENT SO IF 
     message.channel.startTyping(); // TELLS YOUR HANDICAPPED BOT TO START TYPING! ;)
 
 
-    let msg = await message.channel.send('**Gerando seu avatar... Isso pode demorar um pouco.**') //UNNECESSARY BUT COOL.
+    let msg = await message.channel.send('**Carregando seu avatar... Isso pode demorar um pouco.**') //UNNECESSARY BUT COOL.
 
     let user = message.mentions.users.first() || message.author; //THIS IS IMPORTANT BECAUSE YOU WANT YOUR BOT TO SHOW OTHER PEOPLE'S AVATAR AS WELL BY MENTIONING THEM!
 
