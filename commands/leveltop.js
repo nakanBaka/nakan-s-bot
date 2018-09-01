@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
                     return client.users.get(a.id)
                 })
                 var toplevel = "\n" + position.slice(0, 10).map((a, posicao) => "**" + (posicao + 1) + "** " +
-                var unbug = 350 * documento.level + 1
+               
                     client.users.get(a.id).username + " - **Level:** " + a.level + ", **Exp:** " + a.xp + "/" + (350 * a.level + 1)).join("\n") + "";
                 message.channel.sendMessage({
                     const rank = new Discord.RichEmbed()
