@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
                 var unbug = 350 * documento.level + 1
                     client.users.get(a.id).username + " - **Level:** " + a.level + ", **Exp:** " + a.xp + "/" + (350 * a.level + 1)).join("\n") + "";
                 message.channel.sendMessage({
-                    let rank  = new Discord.RichEmbed()
+                    const rank = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor('Top 10 - level', toplevel)
       .setFooter("Sua pontuação atual: " + documano.level)
