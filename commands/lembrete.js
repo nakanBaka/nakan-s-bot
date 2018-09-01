@@ -3,14 +3,15 @@ const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
 
+      let reminder = args.slice(1).join(" ");
       let reminderTime = args[0];
       if(!reminderTime) return message.channel.send("**Diga quando devo lhe avisar, exemplo: B!lembrete 15m tomar café**");
-      if(!reminderTime) return message.channel.send("**Diga porque devo lhe avisar!**");
-      let reminder = args.slice(1).join(" ");
+      if(!reminder) return message.channel.send("**Diga porque devo lhe avisar!**");
+      
 
       let remindEmbed = new Discord.RichEmbed()
       .setColor('#ffffff')
-      .setAuthor(`**${message.author.username}**`, message.author.displayAvatarURL)
+      .setAuthor(`${message.author.username}`, message.author.displayAvatarURL)
       .addField("**Motivo:**", `\`\`\`${reminder}\`\`\``)
       .addField("**Tempo:**", `\`\`\`${reminderTime}\`\`\``)
       .setTimestamp();
