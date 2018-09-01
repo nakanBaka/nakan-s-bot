@@ -55,7 +55,64 @@ message.channel.send({embed : embedz})
 
 
 
+var xpCol = new Set()
+let xpRDM = Math.round(Math.random() * 45)
 
+client.on("message", message => {
+    if (message.author.bot) return;
+    if (xpCol.has(message.author.id)) return;
+    database.Users.findOne({
+        "_id": message.author.id
+    }, function(erro, documento) {
+        if (documento) {
+            var unbug = 350 * documento.level + 1
+            if (documento.xp > unbug) {
+                documento.xp += xpRDM
+                documento.level += 1
+                message.reply(`**:gem: Parabéns ${message.author.username}! Você agora é nível ${documento.level}!**`);
+                documento.xp = 0
+                documento.save()
+                xpCol.add(message.author.id)
+                setTimeout(function() {
+                    xpCol.delete(message.author.id)
+                }, 30 * 1000)
+            } else {
+                if (message.guild.members.get(message.author.id).roles.get("462692320463290378")) {
+                    documento.xp += xpRDM * 2
+                    documento.save()
+                    xpCol.add(message.author.id)
+                    setTimeout(function() {
+                        xpCol.delete(message.author.id)
+                    }, 30 * 1000)
+                } else {
+                    documento.xp += xpRDM
+                    documento.save()
+                    xpCol.add(message.author.id)
+                    setTimeout(function() {
+                        xpCol.delete(message.author.id)
+                    }, 30 * 1000)
+                }
+            }
+        } else {
+            var pessoa = new database.Users({
+                _id: message.author.id,
+                level: 0,
+                xp: 0,
+                coins: 0,
+                conquistas: 0,
+                mensagens: 0,
+                msglevel: 0,
+                invitetru: false,
+                invitecode: "Nenhum",
+                invitou: 0,
+                warn: 0,
+                rep: 0
+            })
+
+            pessoa.save()
+        }
+    });
+});
 
 
 
@@ -65,13 +122,13 @@ message.channel.send({embed : embedz})
         const swearWords = ["https://discord.gg/"]; // These are the words that wll be filtered. If you would like to add more, simple add ,"word" inbetween the [ and ] and then it'll filter that word as well
         if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
             message.delete();
-            message.channel.send(`Hey ${message.author}! Sem permissão para mandar convites!`).then(m => m.delete(3000));
+            message.channel.send(`**Hey ${message.author}! Você não possui permissão para mandar convites!**`).then(m => m.delete(3000));
             embed = new Discord.RichEmbed() // The log feature will log embeds, instead of simple messages. This improves the look of the word filter and makes it easier to code.
             embed.setAuthor(name=`${message.author.tag}`, icon=message.author.avatarURL) // The author label will show the user who actually used the word. It will show their FULL tag and their profile picture.
-            embed.setDescription(`O usuario ${message.author.username}, Tentou enviar um convite no servidor ${message.guild.name} no canal ${message.channel.name}`+ message.channel) // This will tell you which channel the word was used in.
+            embed.setDescription(`**O usuário ${message.author.username}, Tentou enviar um convite no servidor ${message.guild.name}, no canal ${message.channel.name}**`+ message.channel) // This will tell you which channel the word was used in.
             embed.setColor(0xff0000) // This is just a random colour. If you'd like to change it, simple change the "ff0000" to a different code. Make sure "0x" stays before the number.
-            embed.addField(name="Mensagem:", value=message.content) // This will tell you the entire message, so you can spot out the word which was used.
-            embed.setFooter(name=`ID: ${message.author.id}`) // This will give you the UserID of the user who used a filtered word in the embed's footer.
+            embed.addField(name="**Mensagem:**", value=message.content) // This will tell you the entire message, so you can spot out the word which was used.
+            embed.setFooter(name=`**ID: ${message.author.id}**`) // This will give you the UserID of the user who used a filtered word in the embed's footer.
             embed.setTimestamp() // This will tell you what time the word was used at.
     
             guild = client.guilds.get("380871687702446080")
@@ -97,7 +154,7 @@ message.channel.send({embed : embedz})
           let Embed = new Discord.RichEmbed()
           .setFooter(`Usuário entrou | agora temos ${member.guild.memberCount} Membros`)
           .setColor("#cde246")    
-          .setAuthor(`${member.displayName} entrou no servidor ${member.guild.name}`, member.user.displayAvatarURL)
+          .setAuthor(`**O usuário ${member.displayName} entrou no servidor ${member.guild.name}**`, member.user.displayAvatarURL)
           .setTimestamp()
           channel.send(Embed);
       }else{return; }
@@ -111,7 +168,7 @@ message.channel.send({embed : embedz})
             
               let Embed = new Discord.RichEmbed()
               .setColor("#e26346")
-              .setAuthor(`${member.displayName}, saiu do servidor ${member.guild.name}.`, member.user.displayAvatarURL)
+              .setAuthor(`**O usuário ${member.displayName}, saiu do servidor ${member.guild.name}.**`, member.user.displayAvatarURL)
               .setTimestamp()
               .setFooter(`Usuário saiu | estamos com ${member.guild.memberCount} Membros agora...`)
               channel.send(Embed);
