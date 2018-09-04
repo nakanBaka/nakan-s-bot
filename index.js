@@ -32,7 +32,7 @@ client.on("message", message => {
     commandFile.run(client, message, args);
     message.react("✅")
     
-	if(!commandFile) return message.react('❎');
+	if(!commandFile) return message.react('<:us:482990319122513921>');
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
