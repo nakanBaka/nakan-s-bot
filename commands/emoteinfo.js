@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-const prefix = "prefixo"
 const moment = require("moment")
 moment.locale("pt-BR")
 
