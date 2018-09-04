@@ -21,5 +21,4 @@ module.exports.run = async (bot, message, args) => {
         .addField("ID:", emoji.id)
         .addField("Gerenciado pela Twitch:", gerenciadotwitch)
         message.channel.send(embed)
-    }
 }
