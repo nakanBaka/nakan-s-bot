@@ -6,7 +6,7 @@ var message = new Discord.Client();
 var database = require("./database.js")
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new YouTube("AIzaSyCKb9mAGkcdVTiZ2iMr605UyOxKjNa0yBQ");
+const youtube = new YouTube(process.env.YOUTUBE_API);
 const queue = new Map();
 
 fs.readdir("./events/", (err, files) => {
@@ -32,7 +32,7 @@ client.on("message", message => {
     commandFile.run(client, message, args);
     message.react("✅")
     
-	if(!commandFile) return message.react('<:us:482990319122513921>');
+	if(!commandFile) return message.reply(`** Não o achei o comando ${config.prefix}${command}!**`);
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
