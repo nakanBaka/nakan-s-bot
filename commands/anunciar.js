@@ -6,8 +6,9 @@ module.exports.run = async (client, message, args) => {
 
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**Sem permissão!**");
 const sayMessage = args.join(" ");
-if(!sayMessage)return message.reply("**Diga algo para anunciar**");
  message.delete()
+if(!sayMessage)return message.reply("**Diga algo para anunciar**");
+ 
 const embed = new Discord.RichEmbed()
 
 .setTitle('📢 **Anuncio!** 📢')
