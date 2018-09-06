@@ -32,11 +32,11 @@ client.on("message", message => {
     commandFile.run(client, message, args);
     message.react("✅")
     
-	if(!commandFile) return message.reply(`** Não o achei o comando ${config.prefix}${command}!**`);
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
+   message.reply(`** Não o achei o comando ${config.prefix}${command}!**`);
   };   
 });
 
