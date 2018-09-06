@@ -37,7 +37,6 @@ client.on("message", message => {
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
-   message.react('❎')
   };   
 });
 
