@@ -153,7 +153,7 @@ client.on("message", message => {
           let Embed = new Discord.RichEmbed()
           .setFooter(`Usuário entrou | agora temos ${member.guild.memberCount} Membros`)
           .setColor("#cde246")    
-          .setAuthor(`**O usuário ${member.displayName} entrou no servidor ${member.guild.name}**`, member.user.displayAvatarURL)
+          .setAuthor(`O usuário ${member.displayName} entrou no servidor ${member.guild.name}`, member.user.displayAvatarURL)
           .setTimestamp()
           channel.send(Embed);
       }else{return; }
@@ -167,7 +167,7 @@ client.on("message", message => {
             
               let Embed = new Discord.RichEmbed()
               .setColor("#e26346")
-              .setAuthor(`**O usuário ${member.displayName}, saiu do servidor ${member.guild.name}.**`, member.user.displayAvatarURL)
+              .setAuthor(`O usuário ${member.displayName}, saiu do servidor ${member.guild.name}.`, member.user.displayAvatarURL)
               .setTimestamp()
               .setFooter(`Usuário saiu | estamos com ${member.guild.memberCount} Membros agora...`)
               channel.send(Embed);
