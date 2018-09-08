@@ -30,13 +30,13 @@ client.on("message", message => {
   try {
 	let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
-    message.react("✅")
+    message.react("<:YCharlie:488064532309213184>")
     
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
-   message.reply(`** Não o achei o comando ${config.prefix}${command}!**`);
+   message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${config.prefix}${command}!**`);
   };   
 });
 
