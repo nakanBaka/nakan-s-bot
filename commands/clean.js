@@ -1,8 +1,8 @@
 exports.run = (client, message, args)  => {
     let reason = args.slice(0).join(' ');
-      if (message.author.bot) return message.reply("**Bots não podem usar esse comando!**")
-      if (!message.member.hasPermission(["MANAGE_MESSAGES"])) return message.reply("**Você não tem permissão para limpar o chat!**");
-      if (reason.length < 1) return message.reply('**Diga a quantidade de mensagens que devo apagar!**');
+      if (message.author.bot) return message.reply("<:xCharlie:488064590811234304> **Bots não podem usar esse comando!**")
+      if (!message.member.hasPermission(["MANAGE_MESSAGES"])) return message.reply("<:xCharlie:488064590811234304> **Você não tem permissão para limpar o chat!**");
+      if (reason.length < 1) return message.reply('<:xCharlie:488064590811234304> **Diga a quantidade de mensagens que devo apagar!**');
       message.delete()
       message.channel.bulkDelete(`${args[0]}`)
         setTimeout(function() {
