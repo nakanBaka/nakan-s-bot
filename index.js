@@ -137,16 +137,16 @@ client.on("message", message => {
     })
 
     client.on('guildMemberAdd', member => {   
-        if(member.guild.id === "380871687702446080"){
+        if(member.guild.id === "487824248547573770"){
           const members = member.guild.memberCount;
-          const channel = member.guild.channels.find('name', 'welcome');
+          const channel = member.guild.channels.find('name', 'entrada-e-saida');
           if (!channel) return;
     
-        let Role = member.guild.roles.find(`name`, "bots");
+        let Role = member.guild.roles.find(`name`, "Bots");
         if(member.user.bot){
             member.addRole(Role.id)
         }else{
-          let role = member.guild.roles.find(`name`, "membros");
+          let role = member.guild.roles.find(`name`, "Membros");
             member.addRole(role.id)
         };
      
@@ -161,7 +161,7 @@ client.on("message", message => {
     
 
         client.on('guildMemberRemove', member => {
-            if(member.guild.id === "380871687702446080"){
+            if(member.guild.id === "487824248547573770"){
               const channel = member.guild.channels.find(`name`, 'welcome');
               if(!channel) return; 
             
@@ -176,7 +176,7 @@ client.on("message", message => {
 
             
     var servers = {};
-    var prefix = 'p.';
+    var prefix = 'c!';
     client.on("message", async message => {
         var args = message.content.substring(prefix.length).split(" ");
         if (!message.content.startsWith(prefix)) return;
@@ -184,7 +184,7 @@ client.on("message", message => {
         var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
         var serverQueue = queue.get(message.guild.id);
         switch (args[0].toLowerCase()) {
-          case "mplay":
+          case "play":
         var voiceChannel = message.member.voiceChannel;
             if (!voiceChannel) return message.channel.send('Entre em um canal de áudio antes!');
             var permissions = voiceChannel.permissionsFor(message.client.user);
@@ -235,20 +235,20 @@ client.on("message", message => {
                 return handleVideo(video, message, voiceChannel);
             }
             break;
-          case "mskip":
+          case "skip":
             if (!message.member.voiceChannel) return message.channel.send('Você não está no canal!');
             if (!serverQueue) return message.channel.send('Não há nada tocando, então eu pulei para você.');
             serverQueue.connection.dispatcher.end('Música pulada!');
             return undefined;
             break;
-          case "mstop":
+          case "stop":
             if (!message.member.voiceChannel) return message.channel.send('Você não está no canal!');
             if (!serverQueue) return message.channel.send('Não há nada tocando, então irei parar para você.');
             serverQueue.songs = [];
             serverQueue.connection.dispatcher.end('Música parada!');
             return undefined;
     break;
-          case "mvolume":
+          case "volume":
             if (!message.member.voiceChannel) return message.channel.send('Você não está no canal!');
             if (!serverQueue) return message.channel.send('Não há nada tocando...');
             if (!args[1]) return message.channel.send(`O volume atual é: **${serverQueue.volume}**`);
@@ -256,11 +256,11 @@ client.on("message", message => {
             serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
             return message.channel.send(`Mudei meu volume para: **${args[1]}**`);
     break;
-          case "mnp":
+          case "np":
             if (!serverQueue) return message.channel.send('Não há nada tocando...');
             return message.channel.send(`Tocando agora: **${serverQueue.songs[0].title}**`);
     break;
-          case "mqueue":
+          case "queue":
             if (!serverQueue) return message.channel.send('Não há nada tocando.');
             return message.channel.send(`
     __**Queue atual:**__
@@ -268,7 +268,7 @@ client.on("message", message => {
     **Tocando agora:** ${serverQueue.songs[0].title}
             `);
     break;
-          case "mpause":
+          case "pause":
             if (serverQueue && serverQueue.playing) {
                 serverQueue.playing = false;
                 serverQueue.connection.dispatcher.pause();
@@ -276,7 +276,7 @@ client.on("message", message => {
             }
             return message.channel.send('Não há nada tocando.');
     break;
-          case "mresume":
+          case "resume":
             if (serverQueue && !serverQueue.playing) {
                 serverQueue.playing = true;
                 serverQueue.connection.dispatcher.resume();
