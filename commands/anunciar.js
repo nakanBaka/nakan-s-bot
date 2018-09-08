@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**<:xCharlie:488064590811234304> Sem permissão!**");
 const sayMessage = args.join(" ");
  message.delete()
-if(!sayMessage)return message.reply("**Diga algo para anunciar**");
+if(!sayMessage)return message.reply("**<:xCharlie:488064590811234304> Diga algo para anunciar**");
  
 const embed = new Discord.RichEmbed()
 
