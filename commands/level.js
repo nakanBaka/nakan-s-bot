@@ -21,6 +21,7 @@ exports.run = (client, message, args) => {
           .addField(`Seu xp atual é:`, documento.xp + "/" + unbug)
           .setTimestamp()
 		 message.channel.send(LvlEmbed);
+    })
   } else {
   
 
