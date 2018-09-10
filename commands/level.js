@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
           .setAuthor(`Seu level é:`, documento.level)
           .addField(`Seu xp atual é:`, documento.xp + "/" + unbug)
           .setTimestamp()
-		 message.channel.send(embed);
+          message.channel.send(embed);
   } else {
   
 
@@ -52,7 +52,7 @@ exports.run = (client, message, args) => {
           .setAuthor(`O level atual do usuário é:`, documento.level)
           .addField(`O xp atual do usuário é:`, documento.xp + "/" + unbug)
           .setTimestamp()
-		 message.channel.send(embedp);
+          message.channel.send(embedp);
                
 
       } else {
