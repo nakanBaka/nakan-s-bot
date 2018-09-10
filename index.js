@@ -55,7 +55,7 @@ message.channel.send({embed : embedz})
 
 
 var xpCol = new Set()
-let xpRDM = Math.round(Math.random() * 45)
+let xpRDM = Math.round(Math.random() * 47)
 
 client.on("message", message => {
     if (message.author.bot) return;
@@ -68,8 +68,11 @@ client.on("message", message => {
             if (documento.xp > unbug) {
                 documento.xp += xpRDM
                 documento.level += 1
-                message.reply(`**:gem: Parabéns ${message.author.username}! Você agora é nível ${documento.level}!**`);
-                documento.xp = 0
+                 let LvlUpEmbed = new Discord.RichEmbed()
+          .setColor("#3fe5f4")    
+          .setAuthor(`Parabéns ${message.author.username}! Você subiu para o level ${documento.level}`)
+          .setTimestamp()
+		 message.channel.send(LvlUpEmbed);
                 documento.save()
                 xpCol.add(message.author.id)
                 setTimeout(function() {
@@ -98,13 +101,7 @@ client.on("message", message => {
                 level: 0,
                 xp: 0,
                 coins: 0,
-                conquistas: 0,
-                mensagens: 0,
                 msglevel: 0,
-                invitetru: false,
-                invitecode: "Nenhum",
-                invitou: 0,
-                warn: 0,
                 rep: 0
             })
 
