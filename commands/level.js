@@ -14,14 +14,12 @@ exports.run = (client, message, args) => {
 
     var unbug = 350 * documento.level + 1
 
-    message.reply({
            let embed = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
           .setAuthor(`Seu level é:`, documento.level)
           .addField(`Seu xp atual é:`, documento.xp + "/" + unbug)
           .setTimestamp()
 		 message.channel.send(embed);
-    })
   } else {
   
 
@@ -46,7 +44,7 @@ exports.run = (client, message, args) => {
 
         var unbug = 350 * documento.level + 1
 
-          message.reply({
+         
             let embedp = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
           .setAuthor(`O level atual do usuário é:`, documento.level)
@@ -54,8 +52,6 @@ exports.run = (client, message, args) => {
           .setTimestamp()
 		 message.channel.send(embedp);
                
-              
-          });
 
       } else {
 
