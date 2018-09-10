@@ -15,30 +15,12 @@ exports.run = (client, message, args) => {
     var unbug = 350 * documento.level + 1
 
     message.reply({
-      "embed": {
-        "color": 55512,
-        "thumbnail": {
-          "url": message.guild.iconURL
-        },
-        "author": {
-          "name": message.author.username,
-          "icon_url": message.author.displayAvatarURL
-        },
-        "fields": [
-          {
-            "name": ":gem: **Seu Level atual é:**",
-            "value": documento.level,
-            "inline": true
-          },
-          {
-            "name": "<a:rolao:477636855345578005> **Seu EXP atual é:**",
-            "value": documento.xp + "/" + unbug,
-            "inline": true
-          }
-        ]
-      }
-    });
-
+           let LvlEmbed = new Discord.RichEmbed()
+          .setColor("#3fe5f4")    
+          .setAuthor(`Seu level é:`, documento.level)
+          .addField(`Seu xp atual é:`, documento.xp + "/" + unbug)
+          .setTimestamp()
+		 message.channel.send(LvlEmbed);
   } else {
   
 
@@ -64,28 +46,14 @@ exports.run = (client, message, args) => {
         var unbug = 350 * documento.level + 1
 
           message.reply({
-            "embed": {
-              "color": 55512,
-              "thumbnail": {
-                "url": message.guild.iconURL
-              },
-              "author": {
-                "name": message.mentions.users.first().username,
-                "icon_url": message.mentions.users.first().displayAvatarURL
-              },
-              "fields": [
-                {
-                  "name": ":gem: **O Level atual deste usuário é:**",
-                  "value": documento.level,
-                  "inline": true
-                },
-                {
-                  "name": "<a:rolao:477636855345578005> **A EXP atual deste usuário é:**",
-                  "value": documento.xp + "/" + unbug,
-                  "inline": true
-                }
-              ]
-            }
+            let LvlpEmbed = new Discord.RichEmbed()
+          .setColor("#3fe5f4")    
+          .setAuthor(`O level atual do usuário é:`, documento.level)
+          .addField(`O xp atual do usuário é:`, documento.xp + "/" + unbug)
+          .setTimestamp()
+		 message.channel.send(LvlpEmbed);
+               
+              
           });
 
       } else {
