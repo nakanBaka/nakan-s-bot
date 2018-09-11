@@ -26,8 +26,4 @@ exports.run = (client, message, args)  => {
               ]
             })
           });
-    }).catch(err => {
-        console.error(err);
-        message.reply("**Acho que o idima não existe.**")
-    });
-    }
+  
