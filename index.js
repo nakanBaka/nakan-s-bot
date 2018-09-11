@@ -1,8 +1,9 @@
-const Discord = require('discord.js');
+const client = new Discord.Client({
+    autoReconnect: true
+});
 const client = new Discord.Client();
 const config = require('./config.json');
 const fs = require('fs');
-var message = new Discord.Client();
 var database = require("./database.js")
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
