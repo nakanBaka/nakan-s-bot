@@ -24,7 +24,7 @@ exports.run = (client, message, args)  => {
                   "inline": true
                 }
               ]
-            }
+            })
           });
     }).catch(err => {
         console.error(err);
