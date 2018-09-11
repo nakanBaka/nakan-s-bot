@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
 
            let embed = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
-          .setAuthor(`**Level!**`, message.author.iconURL)
+          .setAuthor(`${message.author.username}`, message.author.iconURL)
           .addField(`**Seu level é:**`, documento.level)
           .addField(`**Seu xp atual é:**`, documento.xp + "/" + unbug)
           .setTimestamp()
@@ -49,7 +49,7 @@ exports.run = (client, message, args) => {
          
             let embedp = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
-          .setAuthor(`**Level!**`, message.author.iconURL)
+          .setAuthor(`${message.author.username}`, message.author.iconURL)
           .addField(`**O level atual do usuário é:**`, documento.level)
           .addField(`**O xp atual do usuário é:**`, documento.xp + "/" + unbug)
           .setTimestamp()
