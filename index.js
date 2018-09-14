@@ -56,7 +56,7 @@ message.channel.send({embed : embedz})
 
 
 var xpCol = new Set()
-let xpRDM = Math.round(Math.random() * 47)
+let xpRDM = Math.round(Math.random() * 21)
 
 client.on("message", message => {
     if (message.author.bot) return;
@@ -65,7 +65,7 @@ client.on("message", message => {
         "_id": message.author.id
     }, function(erro, documento) {
         if (documento) {
-            var unbug = 350 * documento.level + 1
+            var unbug = 900 * documento.level + 1
             if (documento.xp > unbug) {
                 documento.xp += xpRDM
                 documento.level += 1
