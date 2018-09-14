@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 
   if (documento) {
 
-    var unbug = 350 * documento.level + 1
+    var unbug = 900 * documento.level + 1
 
            let embed = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
@@ -44,7 +44,7 @@ exports.run = (client, message, args) => {
 
       if (documento) {
 
-        var unbug = 350 * documento.level + 1
+        var unbug = 900 * documento.level + 1
 
          
             let embedp = new Discord.RichEmbed()
