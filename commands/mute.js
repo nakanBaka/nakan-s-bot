@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     if (!mutetime) return message.reply("**Você não especificou o tempo!**");
 
     await (tomute.addRole(muterole.id));
-    message.reply(`<@${tomute.id}> foi mutado por ${ms(ms(mutetime))}`);
+    message.reply(`<@${tomute.id}> **foi mutado por ${ms(ms(mutetime))}**`);
 console.log(`${message.author.username} Mutou: ${user.username}`)
     setTimeout(function() {
         tomute.removeRole(muterole.id);
