@@ -4,7 +4,7 @@ let dayRDM = Math.round(Math.random() * 2500)
 
 exports.run = (client, message, args) => {
 
-    if (dayCol.has(message.author.id)) return message.reply("**Você já pegou daily hoje!**");
+    if (dayCol.has(message.author.id)) return message.reply("**Você já pegou seu cheque hoje!**");
 
     database.Users.findOne({
         "_id": message.author.id
@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
           .setColor("#3fe5f4")    
           .setAuthor(`${message.author.username}`, message.author.iconURL)
           .setThumbnail(message.author.dislayAvatarURL)  
-          .addField(`**Daily**`, `**Você coletou: ${dayRDM} coins!**`)
+          .addField(`**Cheque**`, `**Você coletou: ${dayRDM} coins!**`)
           .setTimestamp()
           message.channel.send(embed);
             dayCol.add(message.author.id)
