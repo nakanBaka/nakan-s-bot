@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 var database = require("../database.js")
 var dayCol = new Set()
 let dayRDM = Math.round(Math.random() * 2500)
