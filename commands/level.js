@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
           .setAuthor(`${message.author.username}`, message.author.iconURL)
           .addField(`**Seu level é:**`, documento.level)
           .addField(`**Seu xp atual é:**`, documento.xp + "/" + unbug)
-          .setImage(message.author.dislayAvatarURL)
+          .setThumbnail(message.author.dislayAvatarURL)
           .setTimestamp()
           message.channel.send(embed);
   } else {
@@ -53,7 +53,7 @@ exports.run = (client, message, args) => {
           .setAuthor(`${message.author.username}`, message.author.iconURL)
           .addField(`**O level atual do usuário é:**`, documento.level)
           .addField(`**O xp atual do usuário é:**`, documento.xp + "/" + unbug)
-          .setImage(user.dislayAvatarURL)
+          .setThumbnail(user.dislayAvatarURL)
           .setTimestamp()
           message.channel.send(embedp);
                
