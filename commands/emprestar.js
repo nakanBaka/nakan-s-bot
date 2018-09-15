@@ -31,7 +31,7 @@ exports.run = (client, message, args) => {
                             let embed = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
           .setAuthor(`${message.author.username}`, message.author.iconURL)
-          .addField(`**Emprestado:**`, docs.coins + " **Para** " + user)
+          .addField(`**Emprestado:**`, args[1] + " **Para** " + user)
           .setTimestamp()
           message.channel.send(embed);
 
