@@ -12,12 +12,22 @@ exports.run = (client, message, args) => {
 
         if (documento) {
 
-            if (!prefix.length < 1) {
-
-                if (message.content.startsWith("a!welcome set")) {
-                    if (!razaod.length < 1) {
+            if (!prefix.length < 1)return message.reply("**Diga para que prefixo devo mudar!**);
 
                         
-                        documento.prefix = message.content.replace("a!welcome set ", "");
+                        documento.prefix = message.content.replace(args[1]);
                         documento.save();
                         message.reply(`**Agora minha prefixo é **${documento.prefix}**!**`);
+ } else {
+
+            var servidor = new database.Guilds({
+                _id: message.guild.id,
+               prefix: "c!"
+            })
+            servidor.save()
+
+        }
+
+    })
+
+}
