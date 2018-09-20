@@ -23,32 +23,21 @@ var User = new Schema({
         type: Number,
         default: 0
     },
-    msglevel: {
-        type: Number,
-        default: 0
-    },
     rep: {
         type: Number,
         default: 0
-    },
-    comum :{
-        type: Number,
-        default: 0
-    },
-    rara :{
-        type: Number,
-        default: 0
-    },
-    epica :{
-        type: Number,
-        default: 0
-    },
-    lendaria :{
-        type: Number,
-        default: 0
+    }
     }
 })
-  
+  var Guild = new Schema({
+    _id: {
+        type: String
+    },
+    prefix: {
+        type: String,
+        default: "c!"
 
 var Users = mongoose.model("Users", User);
+var Guilds = mongoose.model("Guilds", Guild);        
 exports.Users = Users
+exports.Guilds = Guilds        
