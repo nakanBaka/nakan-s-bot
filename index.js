@@ -20,10 +20,10 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 client.on("message", message => {
   if (message.author.bot) return;
-  if (!message.content.startsWith(config.prefix)) return;
+  if (!message.content.startsWith(documento.prefix)) return;
  
   let command = message.content.split(" ")[0];
-  command = command.slice(config.prefix.length);
+  command = command.slice(documento.prefix.length);
  
   let args = message.content.split(" ").slice(1);
   // The list of if/else is replaced with those simple 2 lines:
@@ -37,7 +37,7 @@ client.on("message", message => {
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
-   message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${config.prefix}${command}!**`);
+   message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${documento.prefix}${command}!**`);
   };   
 });
 
