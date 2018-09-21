@@ -19,6 +19,9 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 client.on("message", message => {
+  database.Guilds.findOne({
+        "_id": message.guild.id
+    }, function(erro, documento) {
   if (message.author.bot) return;
   if (!message.content.startsWith(documento.prefix)) return;
  
@@ -40,7 +43,7 @@ client.on("message", message => {
    message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${documento.prefix}${command}!**`);
   };   
 });
-
+});
 
 client.on("message", message => {
   if(message.content == '<@484534602644455456>'){
