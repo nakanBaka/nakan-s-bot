@@ -19,15 +19,11 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 client.on("message", message => {
-  database.Guilds.findOne({
-        "_id": message.guild.id
-    }, function(erro, documento) {
-	  if (documento) {
   if (message.author.bot) return;
-  if (!message.content.startsWith(documento.prefix)) return;
+  if (!message.content.startsWith(config.prefix)) return;
  
   let command = message.content.split(" ")[0];
-  command = command.slice(documento.prefix.length);
+  command = command.slice(config.prefix.length);
  
   let args = message.content.split(" ").slice(1);
   // The list of if/else is replaced with those simple 2 lines:
@@ -35,20 +31,16 @@ client.on("message", message => {
   try {
 	let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
-    message.react("<:YCharlie:488064532309213184>")
+    message.react("✅")
     
+
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
-	} else {
-   message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${documento.prefix}${command}!**`);
-	       
-	}
+   message.reply(`**Ocorreu um erro ao executar o comando: ${err}`)
   };   
 });
-});
-
 client.on("message", message => {
   if(message.content == '<@484534602644455456>'){
 var embedz = new Discord.RichEmbed()
