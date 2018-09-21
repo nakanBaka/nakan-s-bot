@@ -36,7 +36,9 @@ var User = new Schema({
     prefix: {
         type: String,
         default: "c!"
-
+}
+    }
+})
 var Users = mongoose.model("Users", User);
 var Guilds = mongoose.model("Guilds", Guild);        
 exports.Users = Users
