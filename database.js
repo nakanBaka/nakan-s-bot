@@ -26,7 +26,6 @@ var User = new Schema({
     rep: {
         type: Number,
         default: 0
-    }
 }            
   })                      
 
@@ -37,7 +36,6 @@ var User = new Schema({
     prefix: {
         type: String,
         default: "c!"
-     }
 }
   })
 var Users = mongoose.model("Users", User);
