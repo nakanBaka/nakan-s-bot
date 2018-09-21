@@ -37,7 +37,7 @@ var User = new Schema({
         type: String,
         default: "c!"
 }
-    }
+    })
 })
 var Users = mongoose.model("Users", User);
 var Guilds = mongoose.model("Guilds", Guild);        
