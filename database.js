@@ -27,8 +27,9 @@ var User = new Schema({
         type: Number,
         default: 0
     }
-    })
-})
+}            
+  })                      
+
   var Guild = new Schema({
     _id: {
         type: String
@@ -36,9 +37,9 @@ var User = new Schema({
     prefix: {
         type: String,
         default: "c!"
+     }
 }
-    })
-})
+  })
 var Users = mongoose.model("Users", User);
 var Guilds = mongoose.model("Guilds", Guild);        
 exports.Users = Users
