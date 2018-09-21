@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
 
         if (documento) {
 
-            if (!prefix.length < 1)return message.reply("**Diga para que prefixo devo mudar!**);
+            if (!prefix.length < 1)return message.reply("**Diga para que prefixo devo mudar!**");
 
                         
                         documento.prefix = message.content.replace(args[1]);
