@@ -41,6 +41,7 @@ client.on("message", message => {
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
    console.error(err);
+	} else {
    message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${documento.prefix}${command}!**`);
 	       
 	}
