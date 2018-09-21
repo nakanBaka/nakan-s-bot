@@ -27,7 +27,7 @@ var User = new Schema({
         type: Number,
         default: 0
     }
-    }
+    })
 })
   var Guild = new Schema({
     _id: {
