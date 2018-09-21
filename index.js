@@ -22,6 +22,7 @@ client.on("message", message => {
   database.Guilds.findOne({
         "_id": message.guild.id
     }, function(erro, documento) {
+	  if (documento) {
   if (message.author.bot) return;
   if (!message.content.startsWith(documento.prefix)) return;
  
@@ -41,6 +42,8 @@ client.on("message", message => {
 	} catch (err) {
    console.error(err);
    message.reply(`**<:xCharlie:488064590811234304> | Não o achei o comando ${documento.prefix}${command}!**`);
+	       
+	}
   };   
 });
 });
