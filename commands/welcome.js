@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
                     } else {
                         message.channel.sendMessage({
                             "embed": {
-                                "description": "ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ**Bem-vindo**ㅤㅤㅤㅤㅤㅤㅤㅤ\nㅤ\n**Como usar:**\n```c!welcome set <mensagem de boas-vindas>.",
+                                "description": "ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ**Bem-vindo**ㅤㅤㅤㅤㅤㅤㅤㅤ\nㅤ\n**Como usar:**\n```c!welcome set <mensagem de boas-vindas>.```",
                                 "color": 55512
                             }
                         });
