@@ -1,4 +1,4 @@
-var database = require("../../database.js")
+var database = require("../database.js")
 
 exports.run = (client, message, args) => {
  if (!message.member.hasPermission(["MANAGE_GUILD"])) return message.reply("**Você não tem permissão para mudar minha prefixo!**");
@@ -30,3 +30,5 @@ exports.run = (client, message, args) => {
             })
             servidor.save()
        
+ })
+}
