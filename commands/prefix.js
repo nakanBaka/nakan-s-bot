@@ -11,8 +11,4 @@ exports.run = (Link, message, args) => {
     message.channel.send(`📘 Minha prefixo agora é: \`${newPrefix}\``).catch(console.error);
   
     fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
-  }
-}
-exports.help = {
-  name: 'prefix'
 }
