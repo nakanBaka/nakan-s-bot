@@ -39,7 +39,7 @@ client.on("message", message => {
    console.error(err);
    message.reply(`*Ocorreu um erro ao executar o comando:* **${err}**`)
   }
-}
+});
    
 client.on("message", message => {
   if(message.content == '<@484534602644455456>'){
