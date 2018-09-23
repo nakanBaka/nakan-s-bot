@@ -78,7 +78,13 @@ exports.run = (client, message, args) => {
                 _id: message.guild.id,
                 prefix: "c!",
                 autorole: false,
-                autoroleid: "Nenhum"
+                autoroleid: "Nenhum",
+                welcome: false,
+                welcomechannel: "Nenhum",
+                welcomemsg: "Nenhuma",
+                byebye: false,
+                byebyechannel: "Nenhum",
+                byebyemsg: "Nenhuma",
             })
             servidor.save()
         }
