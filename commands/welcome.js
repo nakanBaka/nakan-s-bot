@@ -41,7 +41,7 @@ exports.run = (client, message, args) => {
                     }
                 
 
-                if (message.content.startsWith("p!welcome delete")) {
+                if (message.content.startsWith("c!welcome delete")) {
                     if (!documento.welcome) {
                         message.reply("**Não há nenhuma mensagem de boas vindas feita por mim neste servidor!**");
                     } else {
@@ -76,7 +76,7 @@ exports.run = (client, message, args) => {
                                 "footer": {
                                   "icon_url": message.author.displayAvatarURL,
                                   "text": message.author.username
-                                },                                }
+                                 }
                             }
                         });
                     }
@@ -92,13 +92,11 @@ exports.run = (client, message, args) => {
                         "footer": {
                           "icon_url": message.author.displayAvatarURL,
                           "text": message.author.username
-                        }
-                    
+                       }
                     }
                 });
 
             }
-
         } else {
 
             var servidor = new database.Guilds({
