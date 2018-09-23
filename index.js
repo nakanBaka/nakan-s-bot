@@ -44,7 +44,7 @@ client.on("message", message => {
    console.error(err);
    message.reply(`**Ocorreu um erro ao executar o comando: ${err}`)
   }
-})
+}
    }
 	}
 			   });
