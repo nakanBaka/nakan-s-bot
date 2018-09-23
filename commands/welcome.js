@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     let razaod = args.slice(1).join(' ');
 
     
-          if (!message.member.hasPermission(["MANAGE_ROLES"])) return message.reply("**Você não tem permissão para definir meu welcome!**")
+          if (!message.member.hasPermission(["MANAGE_GUILD"])) return message.reply("**Você não tem permissão para definir meu welcome!**")
 
     database.Guilds.findOne({
         "_id": message.guild.id
