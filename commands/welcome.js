@@ -61,13 +61,12 @@ exports.run = (client, message, args) => {
                                 "color": 55512,
                                 "timestamp": new Date(),
                                 "footer": {
-                                  "icon_url": message.author.displayAvatarURL,
-                                  "text": message.author.username
-                                },
-
-                                }
+                               }
                             }
-                        })
+                        });
+                    }
+
+                }
                     } else {
                         message.channel.sendMessage({
                             "embed": {
