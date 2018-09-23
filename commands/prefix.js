@@ -1,4 +1,4 @@
-const config = require("../botconfig.json");
+const config = require("../config.json");
 const fs = require("fs")
 
 exports.run = (Link, message, args) => {
@@ -11,7 +11,7 @@ if(message.content.startsWith(config.prefix + "prefix")) {
     config.prefix = newPrefix;
     message.channel.send(`📘 Prefix changed to \`${newPrefix}\``).catch(console.error);
   
-    fs.writeFile("./botconfig.json", JSON.stringify(config), (err) => console.error);
+    fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
   }
 }
 exports.help = {
