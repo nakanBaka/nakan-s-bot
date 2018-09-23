@@ -36,7 +36,15 @@ var User = new Schema({
     prefix: {
         type: String,
         default: "c!"
-}
+    },
+      autorole: {
+        type: Boolean,
+        default: false
+    },
+    autoroleid: {
+        type: String,
+        dafault: "Nenhum"
+    }
   })
 var Users = mongoose.model("Users", User);
 var Guilds = mongoose.model("Guilds", Guild);        
