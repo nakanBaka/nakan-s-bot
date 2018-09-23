@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
         documento.save();
         message.reply(`Mudei minha prefixo para: **${documento.prefix}**`);
           }
-          
+    });
             } else {
 
             var servidor = new database.Guilds({
@@ -29,6 +29,4 @@ exports.run = (client, message, args) => {
                 byebyemsg: "Nenhuma"
             })
             servidor.save()
-       
- })
 }
