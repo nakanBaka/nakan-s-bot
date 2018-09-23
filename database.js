@@ -56,6 +56,18 @@ var User = new Schema({
     welcomemsg: {
         type: String,
         default: "Nenhuma"
+    },
+    byebye: {
+        type: Boolean,
+        default: false
+    },
+    byebyechannel: {
+        type: String,
+        default: "Nenhum"
+    },
+    byebyemsg: {
+        type: String,
+        default: "Nenhuma"
     }
   })
 var Users = mongoose.model("Users", User);
