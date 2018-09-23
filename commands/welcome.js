@@ -36,10 +36,8 @@ exports.run = (client, message, args) => {
                                   "icon_url": message.author.displayAvatarURL,
                                   "text": message.author.username
                                 },
-                                
-                                }
-                           
-                        });
+                                   }
+                        })
                     }
                 
 
