@@ -55,7 +55,7 @@ exports.run = (client, message, args) => {
                     } else {
                      let bembed = new Discord.RichEmbed()
                      .setColor("#3fe5f4")    
-                     .setDescription("Como usar autorole: c!autorole set <cargo>, c!autorole delete, c!autorole info"`)
+                     .setDescription("Como usar autorole: c!autorole set <cargo>, c!autorole delete, c!autorole info")
                      .setThumbnail(message.author.dislayAvatarURL)  
                      .setTimestamp()
                       message.channel.send(bembed);   
