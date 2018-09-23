@@ -67,7 +67,7 @@ exports.run = (client, message, args) => {
 
                                 }
                             }
-                        });
+                        })
                     } else {
                         message.channel.sendMessage({
                             "embed": {
