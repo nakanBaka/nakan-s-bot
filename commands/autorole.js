@@ -48,7 +48,7 @@ exports.run = (client, message, args) => {
                     if (!documento.autorole) {
                         let aembed = new Discord.RichEmbed()
                      .setColor("#3fe5f4")    
-                     .setDescription("**Cargo setado:** <@&" + documento.autoroleid + ">\nㅤ\n**Como usar:**\n```\c!autorole set <Cargo>\c!autorole delete```)
+                     .setDescription("**Cargo setado:** <@&" + documento.autoroleid + ">\nㅤ\n**Como usar:**\n\nc!autorole set <Cargo>\c!autorole delete")
                      .setThumbnail(message.author.dislayAvatarURL)  
                      .setTimestamp()
                       message.channel.send(aembed);
@@ -66,7 +66,7 @@ exports.run = (client, message, args) => {
             } else {
                  let embed = new Discord.RichEmbed()
           .setColor("#3fe5f4")    
-          .setDescription(`**Como usar autorole: c!autorole set <cargo>, c!autorole delete, c!autorole info**`)
+          .setDescription("**Como usar autorole: c!autorole set <cargo>, c!autorole delete, c!autorole info**")
           .setThumbnail(message.author.dislayAvatarURL)  
           .setTimestamp()
           message.channel.send(embed);
