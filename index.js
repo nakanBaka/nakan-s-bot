@@ -33,7 +33,6 @@ client.on("message", message => {
     commandFile.run(client, message, args);
     message.react("✅")
     
-	if(!commandFile) return message.channel.send('**Não achei nenhum comando com este nome!**');
   
   console.log(`[${message.author.tag}] Usou o  Comando: "${command}" em: [${message.guild.name}]`);
 	} catch (err) {
@@ -41,9 +40,7 @@ client.on("message", message => {
    message.reply(`*Ocorreu um erro ao executar o comando:* **${err}**`)
   }
 }
-   }
-	}
-			   });
+   
 client.on("message", message => {
   if(message.content == '<@484534602644455456>'){
 var embedz = new Discord.RichEmbed()
