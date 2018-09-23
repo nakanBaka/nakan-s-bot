@@ -133,43 +133,37 @@ client.on("message", message => {
         }
     })
 
-    client.on('guildMemberAdd', member => {   
-        if(member.guild.id === "487824248547573770"){
-          const members = member.guild.memberCount;
-          const channel = member.guild.channels.find('name', 'entrada-e-saida');
-          if (!channel) return;
-    
-        let Role = member.guild.roles.find(`name`, "Bots");
-        if(member.user.bot){
-            member.addRole(Role.id)
-        }else{
-          let role = member.guild.roles.find(`name`, "Membros");
-            member.addRole(role.id)
-        };
-     
-          let Embed = new Discord.RichEmbed()
-          .setFooter(`Usuário entrou | agora temos ${member.guild.memberCount} Membros`)
-          .setColor("#cde246")    
-          .setAuthor(`O usuário ${member.displayName} entrou no servidor ${member.guild.name}`, member.user.displayAvatarURL)
-          .setTimestamp()
-          channel.send(Embed);
-      }else{return; }
-        });
-    
+    client.on('guildMemberAdd', member => {
 
-        client.on('guildMemberRemove', member => {
-            if(member.guild.id === "487824248547573770"){
-              const channel = member.guild.channels.find(`name`, 'welcome');
-              if(!channel) return; 
-            
-              let Embed = new Discord.RichEmbed()
-              .setColor("#e26346")
-              .setAuthor(`O usuário ${member.displayName}, saiu do servidor ${member.guild.name}.`, member.user.displayAvatarURL)
-              .setTimestamp()
-              .setFooter(`Usuário saiu | estamos com ${member.guild.memberCount} Membros agora...`)
-              channel.send(Embed);
-            }else{return; }
-            });
+    database.Guilds.findOne({
+        "_id": member.guild.id
+    }, function (erro, documento) {
+
+        if(documento) {
+
+            if(documento.welcome) {
+
+                var bemvindo = documento.welcomemsg
+                if(member.guild.channels.get(documento.welcomechannel)) {
+                    client.guilds.get(member.guild.id).channels.get(documento.welcomechannel).sendMessage(bemvindo.replace(/{member}/g, `<@${member.id}>`).replace(/{guild}/g, `${member.guild.name}`).replace(/{name}/g, `${member.username}`));
+                } else {}
+
+            } else {}
+
+            if(documento.autorole) {
+
+                var cargo = documento.autoroleid
+                if(member.guild.roles.get(documento.autoroleid)) {
+                    client.guilds.get(member.guild.id).members.get(member.user.id).addRole(client.guilds.get(member.guild.id).roles.get(cargo));
+                } else {}
+
+            } else {}
+
+        } else {}
+
+    })
+})
+
 
             
     var servers = {};
