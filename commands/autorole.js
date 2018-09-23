@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 var database = require("../database.js")
 
 exports.run = (client, message, args) => {
