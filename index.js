@@ -145,7 +145,7 @@ client.on("message", message => {
 
                 var bemvindo = documento.welcomemsg
                 if(member.guild.channels.get(documento.welcomechannel)) {
-                    client.guilds.get(member.guild.id).channels.get(documento.welcomechannel).sendMessage(bemvindo.replace(/{member}/g, `<@${member.id}>`).replace(/{guild}/g, `${member.guild.name}`).replace(/{name}/g, `${member.username}`));
+                    client.guilds.get(member.guild.id).channels.get(documento.welcomechannel).sendMessage(bemvindo.replace(/{user}/g, `<@${member.id}>`).replace(/{server}/g, `${member.guild.name}`).replace(/{tag}/g, `${member.username}`));
                 } else {}
 
             } else {}
