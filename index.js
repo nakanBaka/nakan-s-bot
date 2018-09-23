@@ -19,11 +19,15 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 client.on("message", message => {
+   database.Guilds.findOne({
+        "_id": message.author.id
+    }, function(erro, documento) {
+  if (documento) {
   if (message.author.bot) return;
-  if (!message.content.startsWith(config.prefix)) return;
+  if (!message.content.startsWith(documento.prefix)) return;
  
   let command = message.content.split(" ")[0];
-  command = command.slice(config.prefix.length);
+  command = command.slice(documento.prefix.length);
  
   let args = message.content.split(" ").slice(1);
   // The list of if/else is replaced with those simple 2 lines:
@@ -39,8 +43,11 @@ client.on("message", message => {
 	} catch (err) {
    console.error(err);
    message.reply(`**Ocorreu um erro ao executar o comando: ${err}`)
-  };   
-});
+  }
+})
+   }
+	}
+			   });
 client.on("message", message => {
   if(message.content == '<@484534602644455456>'){
 var embedz = new Discord.RichEmbed()
