@@ -41,7 +41,7 @@ exports.run = (client, message, args) => {
                            
                         });
                     }
-                }
+                
 
                 if (message.content.startsWith("p!welcome delete")) {
                     if (!documento.welcome) {
