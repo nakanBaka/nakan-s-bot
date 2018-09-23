@@ -44,6 +44,18 @@ var User = new Schema({
     autoroleid: {
         type: String,
         dafault: "Nenhum"
+    },
+ welcome: {
+        type: Boolean,
+        default: false
+    },
+    welcomechannel: {
+        type: String,
+        default: "Nenhum"
+    },
+    welcomemsg: {
+        type: String,
+        default: "Nenhuma"
     }
   })
 var Users = mongoose.model("Users", User);
