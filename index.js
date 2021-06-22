@@ -148,6 +148,6 @@ client.on("message", message => {
         client.users.get("341372896922435595").send(embed)
       }
     });
-client.login(process.env.TOKEN);
+client.login(process.env.token);
 
 
