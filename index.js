@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({
     autoReconnect: true
 });
-const config = require('./events/config.json');
+const config = require('./config.json');
 const fs = require('fs');
 
 fs.readdir("./events/", (err, files) => {
@@ -37,13 +37,13 @@ client.on("message", message => {
 });
    
 client.on("message", message => {
-  if(message.content == '<@484534602644455456>'){
+  if(message.content == '<@856914967491248178>'){
 var embedz = new Discord.RichEmbed()
 .setAuthor(message.author.username,message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
 .setDescription(`**Olá! Se quiser minha ajuda escreva ${config.prefix}help.**`)
 .setTimestamp()
-.setFooter(`Pedido por ${message.author.username}`)
+.setFooter(`${message.author.username}`)
 message.channel.send({embed : embedz})
 }})
 
