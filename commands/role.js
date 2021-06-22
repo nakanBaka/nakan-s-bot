@@ -27,5 +27,5 @@ exports.run = async (client, message, args, level) => {
             user.removeRole(role).then(() => message.reply('Cargo removido')).catch((err) => message.reply('Não é possível remover o cargo').then(() => console.log(err)));
             break;
         default:
-            message.reply('Bem, você pode adicionar ou remover cargos... **d.role add**, para adicionar papéis ou **d.role remove**, para tirar cargos.');
+            message.reply('Bem, você pode adicionar ou remover cargos... **d.role add**, para adicionar cargos ou **d.role remove**, para tirar cargos.');
     }}
