@@ -8,12 +8,12 @@ module.exports.run = async (bot, message, args) => {
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!tomute) return message.reply("**Não achei o usuario.**");
     if (tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("**Não posso mutar este usuário.**");
-    let muterole = message.guild.roles.find(`name`, "Charlie-Mute");
+    let muterole = message.guild.roles.find(`name`, "Mutado");
 
     if (!muterole) {
         try {
             muterole = await message.guild.createRole({
-                name: "Charlie-Mute",
+                name: "Mutado",
                 color: "#000000",
                 permissions: []
             })
