@@ -84,6 +84,6 @@ message.channel.send({embed : embedz})
         client.users.get("427898378123214858").send(embed)
       }
     });
-client.login(process.env.token);
+client.login(process.env.TOKEN);
 
 
