@@ -53,65 +53,6 @@ message.channel.send({embed : embedz})
 }})
 
 
-
-var xpCol = new Set()
-let xpRDM = Math.round(Math.random() * 21)
-
-client.on("message", message => {
-    if (message.author.bot) return;
-    if (xpCol.has(message.author.id)) return;
-    database.Users.findOne({
-        "_id": message.author.id
-    }, function(erro, documento) {
-        if (documento) {
-            var unbug = 900 * documento.level + 1
-            if (documento.xp > unbug) {
-                documento.xp += xpRDM
-                documento.level += 1
-                 let LvlUpEmbed = new Discord.RichEmbed()
-          .setColor("#3fe5f4")    
-          .setAuthor(`Parabéns ${message.author.username}! Você subiu para o level ${documento.level}`)
-          .setTimestamp()
-		 message.channel.send(LvlUpEmbed);
-                documento.save()
-                xpCol.add(message.author.id)
-                setTimeout(function() {
-                    xpCol.delete(message.author.id)
-                }, 30 * 1000)
-            } else {
-                if (message.guild.members.get(message.author.id).roles.get("462692320463290378")) {
-                    documento.xp += xpRDM * 2
-                    documento.save()
-                    xpCol.add(message.author.id)
-                    setTimeout(function() {
-                        xpCol.delete(message.author.id)
-                    }, 30 * 1000)
-                } else {
-                    documento.xp += xpRDM
-                    documento.save()
-                    xpCol.add(message.author.id)
-                    setTimeout(function() {
-                        xpCol.delete(message.author.id)
-                    }, 30 * 1000)
-                }
-            }
-        } else {
-            var pessoa = new database.Users({
-                _id: message.author.id,
-                level: 0,
-                xp: 0,
-                coins: 0,
-                msglevel: 0,
-                rep: 0
-            })
-
-            pessoa.save()
-        }
-    });
-});
-
-
-
     client.on('message', message => {
         if (message.channel.type == "dm") return;
         if (message.member.hasPermission('ADMINISTRATOR')) return;
@@ -145,7 +86,7 @@ client.on("message", message => {
         .addField(`Mensagem: `,message.content)
         .setFooter(`DM em meu mensagens... Não pera | DM Logs`)
        
-        client.users.get("341372896922435595").send(embed)
+        client.users.get("427898378123214858").send(embed)
       }
     });
 client.login(process.env.token);
