@@ -2,13 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client({
     autoReconnect: true
 });
-const config = require('./config.json');
+const config = require('./events/config.json');
 const fs = require('fs');
-var database = require("./database.js")
-const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
-const youtube = new YouTube(process.env.YOUTUBE_API);
-const queue = new Map();
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
