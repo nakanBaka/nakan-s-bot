@@ -44,7 +44,7 @@ var embedz = new Discord.RichEmbed()
 .setDescription(`**Olá! Se quiser minha ajuda escreva ${config.prefix}help.**`)
 .setTimestamp()
 .setFooter(`${message.author.username}`)
-message.channel.send({embed : embedz})
+message.channel.send(embedz)
 }})
 
 
