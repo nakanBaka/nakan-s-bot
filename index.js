@@ -37,7 +37,7 @@ client.on("message", message => {
 });
    
 client.on("message", message => {
-  if(message.content == '<@856914967491248178>'){
+  if(message.content == '<@430150354911494166>'){
 var embedz = new Discord.RichEmbed()
 .setAuthor(message.author.username,message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
